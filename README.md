@@ -72,8 +72,8 @@ Default style is **round**
 ```
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-menu-bar/blob/main/Sources/img/img.png)](https://youtu.be/PQRkU7yWUrk)
 
-## Example
+## Code example
 
-Take a look on the example preview in **MenuContentView.swift** or create a project and put **MenuContentView()** in **ContentView()**
+Take a look on the example preview in [**MenuContentView.swift**](https://github.com/The-Igor/d3-menu-bar/blob/main/Sources/d3-menu-bar/example/MenuViewExample.swift) or create a project and put **MenuContentView()** in **ContentView()**
 
 
