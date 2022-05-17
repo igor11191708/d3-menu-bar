@@ -72,7 +72,8 @@ Default style is **round**
 ```
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-menu-bar/blob/main/Sources/img/img.png)](https://youtu.be/PQRkU7yWUrk)
 
-> Take a look on the example preview in **MenuContentView.swift** or create a project and put **MenuContentView()** in **ContentView()**
+## Example
+
+Take a look on the example preview in **MenuContentView.swift** or create a project and put **MenuContentView()** in **ContentView()**
 
 
-SwiftUI customizable menu bar component with the dark and light scheme support
