@@ -58,7 +58,7 @@ Default style is **round**
 |**square**| squared corners |
 
 
-### <font color="red">Component init examples</font>
+### <p style='color:red'>Component init examples</p>
 
 ```Swift
    VStack{
