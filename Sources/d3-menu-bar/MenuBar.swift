@@ -100,9 +100,9 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
                 itemBuilder(tab, SquareTpl.self)
             }
     }
-
-    /// Define view template for cirtain style
+    
     @ViewBuilder
+    /// Define view template for cirtain style
     private func itemBuilder<S : IStyleTpl>(_ tab: T,_ tpl: S.Type) -> some View {
         let isSelected = selected == tab
         let text = tab.rawValue
