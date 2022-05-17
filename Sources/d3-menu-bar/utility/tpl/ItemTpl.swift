@@ -66,7 +66,7 @@ struct ItemTpl<T:IMenuItem, S : IStyleTpl>: View{
         return isSelected ? fontColor : mainColor
     }
 
-    ///adjust the color intensity depending on color scheme (Color+Ext.swift)
+    ///adjust the color intensity depending on color scheme (Color+Ext.swift) https://github.com/The-Igor/d3-color
     private var mainColor: Color {
         if let c = color {
             return colorScheme == .dark ? c.doBrighter(k: 0.1) : c
