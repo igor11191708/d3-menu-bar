@@ -55,6 +55,7 @@ public struct MenuBar<T>: View where T: IMenuItem {
     ///   - selected: Selected item
     ///   - size: Size strategy
     ///   - color: Main color
+    ///   - style: Menu item style
     public init(values: [T], selected: T? = nil, strategy: Strategy = .auto, color: Color? = nil, style: Style = .round) {
         self.values = values
         _selected = State(initialValue: selected)
