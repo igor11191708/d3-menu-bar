@@ -94,7 +94,7 @@ public struct MenuBar<T>: View where T: IMenuItem {
     /// Item template
     /// - Parameter tab: Tab data
     /// - Returns: Item view
-    func itemTpl(_ tab: T) -> some View {
+    private func itemTpl(_ tab: T) -> some View {
             if style == .round {
                 itemBuilder(tab, RoundedTpl.self)
             } else {
