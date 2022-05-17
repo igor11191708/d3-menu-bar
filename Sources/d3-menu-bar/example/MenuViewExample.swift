@@ -10,7 +10,9 @@ import d3_color
 
 /// Example view for MenuBar component
 struct MenuViewExample: View {
-
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     // MARK: - Cfg
 
     let items: [MenuItems] = MenuItems.allCases
