@@ -25,7 +25,7 @@ import SwiftUI
 /// if you need react on selection changed. In this case it does not trigger rerender as if in case you used passing selected item via binding
 ///
 @available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
-public struct MenuBar<T>: View where T: IMenuItem {
+public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
 
     /// A dynamic property type that allows access to a namespace used for
     @Namespace private var animation
@@ -70,10 +70,9 @@ public struct MenuBar<T>: View where T: IMenuItem {
             if strategy == .fit {
                 menuTpl
             } else {
-                ScrollView(.horizontal, showsIndicators: showsIndicators) {
+                ScrollView(.horizontal, showsIndicators: !is_iOS) {
                     ScrollViewReader { proxy in
-                        menuTpl
-                            .onAppear { restoreScrollPosition(proxy) }
+                        menuTpl.onAppear { restoreScrollPosition(proxy) }
                     }
                 }
             }
@@ -81,7 +80,6 @@ public struct MenuBar<T>: View where T: IMenuItem {
     }
 
     // MARK: - Private
-
 
     /// Restore scroll position accroding the selection
     /// - Parameter proxy: scroll proxy
@@ -122,14 +120,6 @@ public struct MenuBar<T>: View where T: IMenuItem {
                     .onTapGesture { withAnimation { selected = tab } }
             }
         }
-    }
-
-    private var showsIndicators: Bool {
-        #if os(iOS)
-            false
-        #else
-            true
-        #endif
     }
 
     // MARK: - Inner enum, struct

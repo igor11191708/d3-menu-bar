@@ -41,7 +41,7 @@ struct ManuContentView_Previews: PreviewProvider {
 // MARK: - Bug fixing
 
 //https://stackoverflow.com/questions/65316497/swiftui-navigationview-navigationbartitle-layoutconstraints-issue
-extension NavigationView {
+extension NavigationView: IEnvironment {
     @ViewBuilder
     func setStyle_iOS() -> some View {
         #if os(iOS)

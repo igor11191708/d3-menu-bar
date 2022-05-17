@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Example view for MenuBar component
-struct MenuViewExample: View {
+struct MenuViewExample: View, IEnvironment {
 
     @Environment(\.colorScheme) var colorScheme
 
@@ -31,13 +31,12 @@ struct MenuViewExample: View {
 
     // MARK: - Private
 
-
+    @ViewBuilder
     private var bodyBackground: some View {
-        #if os(iOS)
+        if is_iOS {
             Rectangle().fill(.thickMaterial)
-        #else
-            Rectangle().fill(colorScheme == .dark ? .black : .white)
-        #endif
+        } else {
+            Rectangle().fill(colorScheme == .dark ? .black : .white) }
     }
 
     @ViewBuilder
