@@ -10,7 +10,7 @@
 - [x] iOS and macOS support
 - [x] Dark and light scheme support
 
-## Main
+## Required
 
 ### 1. enum
 Define enum with menu items conforming to ```IMenuItem```
