@@ -14,7 +14,7 @@ public extension MenuBar {
     /// Callback on selection changed just with items as an input param for a closure
     /// - Parameter fn: callback function
     /// - Returns: View
-    func onSelectionChanged<T:IMenuItem>(_ fn: @escaping (T?) -> Void) -> some View {
+    func onSelectionChanged(_ fn: @escaping (T?) -> Void) -> some View {
         self.onPreferenceChange(MenuItemKey<T>.self) { fn($0) }
     }
 
