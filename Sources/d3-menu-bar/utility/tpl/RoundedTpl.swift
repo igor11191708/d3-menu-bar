@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RoundedTpl: View, IStyleTpl {
+struct RoundedTpl: IStyleTpl {
     
     /// sign of selection
     let isSelected: Bool

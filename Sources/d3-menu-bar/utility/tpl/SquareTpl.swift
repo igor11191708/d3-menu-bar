@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SquareTpl: View, IStyleTpl {
+struct SquareTpl: IStyleTpl {
     
     /// sign of selection
     let isSelected: Bool
