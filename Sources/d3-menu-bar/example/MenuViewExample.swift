@@ -6,13 +6,12 @@
 //
 
 import SwiftUI
-import d3_color
 
 /// Example view for MenuBar component
 struct MenuViewExample: View {
-    
+
     @Environment(\.colorScheme) var colorScheme
-    
+
     // MARK: - Cfg
 
     let items: [MenuItems] = MenuItems.allCases
@@ -41,35 +40,39 @@ struct MenuViewExample: View {
         #endif
     }
 
+    @ViewBuilder
+    private func buildMenu(
+        values: [MenuItems],
+        selected: MenuItems? = nil,
+        strategy: Strategy = .auto,
+        color: Color? = nil,
+        style: Style = .round)
+        -> some View {
+        MenuBar(values: values, selected: selected, strategy: strategy, color: color, style: style).onSelectionChanged(select)
+    }
 
     @ViewBuilder
     private var menus: some View {
         Group {
             Text("Min width 102").font(.callout)
-            MenuBar(values: items, selected: .one, strategy: .flex(102), color: .green)
-                .onSelectionChanged(select)
+            buildMenu(values: items, selected: .one, strategy: .flex(102), color: .green)
             Text("Alocate all affodable space, not scrollable")
-            MenuBar(values: items, selected: .five, strategy: .fit, color: .blue)
-                .onSelectionChanged(select)
+            buildMenu(values: items, selected: .five, strategy: .fit, color: .blue)
             Text("Auto size acoording content")
-            MenuBar(values: items, selected: .six, color: .red)
-                .onSelectionChanged(select)
+            buildMenu(values: items, selected: .six, color: .red)
         }
         Group {
             Text("Auto size acoording content")
-            MenuBar(values: items, selected: .five, color: .purple, style: .square)
-                .onSelectionChanged(select)
+            buildMenu(values: items, selected: .five, color: .purple, style: .square)
             Text("Auto size acoording content")
-            MenuBar(values: items, color: .orange, style: .square)
-                .onSelectionChanged(select)
+            buildMenu(values: items, color: .orange, style: .square)
         }
         Text("Menu with min required params")
-        MenuBar(values: items)
-            .onSelectionChanged(select)
+        buildMenu(values: items)
     }
 
     private func select(item: MenuItems?) {
-        if let text = item?.rawValue{
+        if let text = item?.rawValue {
             print("Selected item \(text)")
         }
     }
@@ -77,18 +80,13 @@ struct MenuViewExample: View {
 
 struct MenuViewExample_Previews: PreviewProvider {
 
-    static var gradient: some View {
-        LinearGradient(colors: [.gray.opacity(0.1), .gray.opacity(0.15), .gray.opacity(0.1)], startPoint: .topLeading, endPoint: .bottomTrailing).ignoresSafeArea()
-    }
-
     static var previews: some View {
-        ZStack {
-            gradient
-            MenuViewExample()
-                .padding(.horizontal)
-                .shadow(color: .black.opacity(0.1), radius: 3, x: 3, y: 3)
-        }
+        MenuViewExample()
     }
 }
+
+
+fileprivate typealias Strategy = MenuBar<MenuItems>.Strategy
+fileprivate typealias Style = MenuBar<MenuItems>.Style
 
 
