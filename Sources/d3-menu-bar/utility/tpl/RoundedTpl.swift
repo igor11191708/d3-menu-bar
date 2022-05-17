@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Rounded style for menu item
 struct RoundedTpl: IStyleTpl {
     
     /// sign of selection

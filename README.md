@@ -13,7 +13,7 @@
 ## Main
 
 ### 1. enum
-Define enum with menu items conforms to ```IMenuItem```
+Define enum with menu items conforming to ```IMenuItem```
 
 ```Swift 
 enum MenuItems: String, IMenuItem {
@@ -30,7 +30,7 @@ MenuBar(values: MenuItems.allCases)
 ```
 
 Pass a clouser to **onSelectionChanged** if you need react on selection changed.
-In this case it does not trigger rerender as if in case you used passing selected item via binding
+In this case it does not trigger rerender as if in case you used passing selected item via binding from **@StateObject**
 
 ## Additional 
 

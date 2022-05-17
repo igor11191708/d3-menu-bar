@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Square style for menu item
 struct SquareTpl: IStyleTpl {
     
     /// sign of selection

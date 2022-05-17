@@ -68,7 +68,7 @@ struct MenuViewExample: View {
             buildMenu(values: items, color: .orange, style: .square)
             Text("Menu with min required params")
             buildMenu(values: items)
-        }      
+        }
     }
 
     private func select(item: MenuItems?) {
