@@ -34,10 +34,8 @@ In this case it does not trigger rerender as if in case you used passing selecte
 
 ## Additional 
 
-#### 2.1 
 * `selected` - pass one of the case from defined enum
 
-#### 2.2 
 * `strategy` - default strategy for the item menu width allocation is **auto**
 
 | Size strategy | Description |
@@ -46,10 +44,8 @@ In this case it does not trigger rerender as if in case you used passing selecte
 |**auto**| Auto size acoording the content |
 |**flex(CGFloat)**| Set up minimal width|
 
-#### 2.3 
 * `color` - default value is **.black**
 
-#### 2.4 
 * `style` - default style is **round**
 
 | Style | Description |
