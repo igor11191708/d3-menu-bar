@@ -4,9 +4,9 @@
 - [x] Observing menu selection changes via generic PreferenceKey
 - [x] The color intensity automatically adjust depending on color scheme (Color+Ext.swift) You don't need to set color for every scheme
 - [x] Various strategy for the item menu width allocation
-- [x] Restore scroll position according the initial selection
+- [x] Set scroll position according the initial selection
 - [x] Setting custom colors for the component
-- [x] Customize menu item style [Round or Square]
+- [x] Customize menu item style [round or square]
 - [x] iOS and macOS support
 - [x] Dark and light scheme support
 
