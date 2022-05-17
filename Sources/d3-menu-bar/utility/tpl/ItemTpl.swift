@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import d3_color
 
 /// Template for menu item
 struct ItemTpl<T:IMenuItem, S : IStyleTpl>: View{
