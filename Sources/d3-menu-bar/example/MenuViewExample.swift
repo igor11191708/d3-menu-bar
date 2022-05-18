@@ -16,7 +16,7 @@ struct MenuViewExample: View, IEnvironment {
 
     let items: [MenuItems] = MenuItems.allCases
     
-    @State var selected : MenuItems? = .two
+    @State var selected : MenuItems? = .one
 
     // MARK: - Life circle
 
