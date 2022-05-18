@@ -22,7 +22,7 @@ public protocol IMenuItem: Hashable, RawRepresentable, CaseIterable, Identifiabl
 }
 
 
-extension IMenuItem where Self.RawValue == String{
+public extension IMenuItem where Self.RawValue == String{
 
     /// unique identifier
     var id : String{

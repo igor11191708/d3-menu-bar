@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "d3-color",
+        "repositoryURL": "https://github.com/The-Igor/d3-color.git",
+        "state": {
+          "branch": null,
+          "revision": "67dcc80aa0f2b8e7cfe998424d12ccb325d9993c",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
