@@ -64,8 +64,6 @@ In this case it does not trigger rerender as if in case you used passing selecte
         MenuBar(values: items, selected: $selected, color: .purple, style: .square)
         MenuBar(values: items, selected: $selected, strategy: .fit, color: .blue)        
         MenuBar(values: items, selected: $selected, color: .red)
-        MenuBar(values: items, color: .yellow)
-        MenuBar(values: items)
     } 
 ```
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-menu-bar/blob/main/Sources/img/img.png)](https://youtu.be/PQRkU7yWUrk)
