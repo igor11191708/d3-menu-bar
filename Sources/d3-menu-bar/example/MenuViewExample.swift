@@ -15,6 +15,8 @@ struct MenuViewExample: View, IEnvironment {
     // MARK: - Cfg
 
     let items: [MenuItems] = MenuItems.allCases
+    
+    @State var selected : MenuItems? = .two
 
     // MARK: - Life circle
 
@@ -47,7 +49,7 @@ struct MenuViewExample: View, IEnvironment {
         color: Color? = nil,
         style: Style = .round)
         -> some View {
-        MenuBar(values: values, selected: selected, strategy: strategy, color: color, style: style).onSelectionChanged(select)
+        MenuBar(values: values, selected: $selected, strategy: strategy, color: color, style: style).onSelectionChanged(select)
     }
 
     @ViewBuilder

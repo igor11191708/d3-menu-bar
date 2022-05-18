@@ -30,10 +30,13 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     /// A dynamic property type that allows access to a namespace used for
     @Namespace private var animation
 
+    /// Selected item Tap detection event
+    @State private var onTap: T?
+
     // MARK: - Config
 
     /// Selected item
-    @State var selected: T?
+    @Binding var selected: T?
 
     /// Menu items
     let values: [T]
@@ -56,15 +59,15 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     ///   - size: Size strategy
     ///   - color: Main color
     ///   - style: Menu item style
-    public init(values: [T], selected: T? = nil, strategy: Strategy = .auto, color: Color? = nil, style: Style = .round) {
+    public init(values: [T], selected: Binding<T?>, strategy: Strategy = .auto, color: Color? = nil, style: Style = .round) {
         self.values = values
-        _selected = State(initialValue: selected)
+        _selected = selected
         self.strategy = strategy
         self.color = color
         self.style = style
     }
 
-    /// The content and behavior of the view.
+    /// The content and behavior of the view
     public var body: some View {
         Group {
             if strategy == .fit {
@@ -72,11 +75,14 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
             } else {
                 ScrollView(.horizontal, showsIndicators: !is_iOS) {
                     ScrollViewReader { proxy in
-                        menuTpl.onAppear { restoreScrollPosition(proxy) }
+                        menuTpl
+                            .onAppear { restoreScrollPosition(proxy) }
+                            .onChange(of: selected) { _ in restoreScrollPosition(proxy) }
                     }
                 }
             }
-        }.preference(key: MenuItemKey<T>.self, value: selected)
+        }.preference(key: MenuItemKey<T>.self, value: onTap)
+
     }
 
     // MARK: - Private
@@ -85,7 +91,9 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     /// - Parameter proxy: scroll proxy
     private func restoreScrollPosition(_ proxy: ScrollViewProxy) {
         if let s = selected {
-            proxy.scrollTo(s.rawValue)
+            withAnimation {
+                proxy.scrollTo(s.rawValue)
+            }
         }
     }
 
@@ -94,21 +102,21 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     /// - Parameter tab: Tab data
     /// - Returns: Item view
     private func itemTpl(_ tab: T) -> some View {
-            if style == .round {
-                itemBuilder(tab, RoundedTpl.self)
-            } else {
-                itemBuilder(tab, SquareTpl.self)
-            }
+        if style == .round {
+            itemBuilder(tab, RoundedTpl.self)
+        } else {
+            itemBuilder(tab, SquareTpl.self)
+        }
     }
-    
+
     @ViewBuilder
     /// Define view template for cirtain style
-    private func itemBuilder<S : IStyleTpl>(_ tab: T,_ tpl: S.Type) -> some View {
+    private func itemBuilder<S : IStyleTpl>(_ tab: T, _ tpl: S.Type) -> some View {
         let isSelected = selected == tab
         let text = tab.rawValue
         let id = tab.id
 
-        ItemTpl(id: id , strategy: strategy, isSelected: isSelected, ns: animation, text: text, color: color, tpl: tpl)
+        ItemTpl(id: id, strategy: strategy, isSelected: isSelected, ns: animation, text: text, color: color, tpl: tpl)
     }
 
     @ViewBuilder
@@ -117,7 +125,10 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
         HStack(spacing: 10) {
             ForEach(values, id: \.self) { tab in
                 itemTpl(tab)
-                    .onTapGesture { withAnimation { selected = tab } }
+                    .onTapGesture {
+                    onTap = tab
+                    withAnimation { selected = tab }
+                }
             }
         }
     }
@@ -133,7 +144,7 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
         case fit
         case flex(CGFloat)
     }
-    
+
     /// Menu item style
     public enum Style: Equatable {
         case round
@@ -149,10 +160,11 @@ public extension MenuBar {
 
     @ViewBuilder
     /// Callback on selection changed just with items as an input param for a closure
+    /// The first initial selection is ommited
     /// - Parameter fn: callback function
     /// - Returns: View
     func onSelectionChanged(_ fn: @escaping (T?) -> Void) -> some View {
-        self.onPreferenceChange(MenuItemKey<T>.self) { fn($0) }
+        self.onPreferenceChange(MenuItemKey<T>.self) { if $0 != nil { fn($0) } }
     }
 
 }
