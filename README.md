@@ -2,7 +2,7 @@
 
 ## Features
 - [x] Observing menu selection changes via generic PreferenceKey
-- [x] The color intensity automatically adjust depending on color scheme (Color+Ext.swift) You don't need to set color for every scheme
+- [x] The color intensity automatically adjusts depending on color scheme (Color+Ext.swift) You don't need to set color for every scheme
 - [x] Various strategy for the item menu width allocation
 - [x] Set scroll position according the initial selection
 - [x] Setting custom colors for the component
@@ -34,7 +34,7 @@ In this case it does not trigger rerender as if in case you used passing selecte
 
 ## Optional
 
-* `selected` - pass one of the case from defined enum
+* `selected` - pass value bound to **@State var selected : MenuItems?**
 
 * `strategy` - default strategy for the item menu width allocation is **auto**
 

@@ -19,8 +19,6 @@ public struct MenuContentView: View {
                 MenuViewExample()
                     .shadow(color: .black.opacity(0.15), radius: 3, x: 3, y: 3)
                 DayNightToggle(toggleScheme: $toggleScheme)
-                    .onTapGesture { withAnimation { toggleScheme.toggle() }
-                }
             }
                 .padding()
                 .frame(maxHeight: .infinity)

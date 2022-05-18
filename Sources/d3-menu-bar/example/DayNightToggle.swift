@@ -9,7 +9,7 @@ import SwiftUI
 
 
 /// Toggle control
-struct DayNightToggle: View {
+public struct DayNightToggle: View {
     
     // MARK: - Cfg
     
@@ -18,14 +18,26 @@ struct DayNightToggle: View {
     
     // MARK: - Life circle
     
-    var body: some View {
+    public init(toggleScheme : Binding<Bool>){
+        _toggleScheme = toggleScheme
+    }
+    
+    public var body: some View {
         ZStack {
             if toggleScheme {
                 Image(systemName: "moon.fill").foregroundColor(.blue)
             } else {
                 Image(systemName: "sun.max.fill").foregroundColor(.orange)
             }
-        }.frame(height: 50).font(.system(size: 50)).padding()
+        }.frame(height: 50)
+            .frame(maxWidth : .infinity)
+            .font(.system(size: 50))
+            .padding()
+            .background(Rectangle()
+                            .fill(.thickMaterial)
+                            .ignoresSafeArea()
+            )
+            .onTapGesture { withAnimation { toggleScheme.toggle() } }
     }
 }
 
