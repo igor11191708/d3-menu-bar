@@ -33,10 +33,6 @@ public struct DayNightToggle: View {
             .frame(maxWidth : .infinity)
             .font(.system(size: 50))
             .padding()
-            .background(Rectangle()
-                            .fill(.thickMaterial)
-                            .ignoresSafeArea()
-            )
             .onTapGesture { withAnimation { toggleScheme.toggle() } }
     }
 }
