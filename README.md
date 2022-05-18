@@ -57,11 +57,13 @@ In this case it does not trigger rerender as if in case you used passing selecte
 ### Component init examples
 
 ```Swift
+    @State var selected : MenuItems?
+
    VStack{
-        MenuBar(values: items, selected: .one, strategy: .flex(102), color: .green)
-        MenuBar(values: items, selected: .five, color: .purple, style: .square)
-        MenuBar(values: items, selected: .five, strategy: .fit, color: .blue)        
-        MenuBar(values: items, selected: .six, color: .red)
+        MenuBar(values: items, selected: $selected, strategy: .flex(102), color: .green)
+        MenuBar(values: items, selected: $selected, color: .purple, style: .square)
+        MenuBar(values: items, selected: $selected, strategy: .fit, color: .blue)        
+        MenuBar(values: items, selected: $selected, color: .red)
         MenuBar(values: items, color: .yellow)
         MenuBar(values: items)
     } 
