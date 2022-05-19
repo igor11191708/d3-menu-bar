@@ -8,7 +8,8 @@
 import SwiftUI
 
 
-/// Toggle control
+/// Toggle control for example view
+@available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
 public struct DayNightToggle: View {
     
     // MARK: - Cfg

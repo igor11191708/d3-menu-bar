@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Example view to demonstrate ``MenuBar`` component
+@available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
 public struct MenuContentView: View {
 
     @State private var toggleScheme = false

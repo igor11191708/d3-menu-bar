@@ -8,20 +8,21 @@
 import SwiftUI
 
 /// Define enum with menu items conforming to ```IMenuItem```
+/// Usage:
 ///
-/// ```enum MenuItems: String, IMenuItem {
-/// case one = "one"
-/// case two = "two"
-/// case three = "three"
-/// }```
+///     enum MenuItems: String, IMenuItem {
+///       case one = "one"
+///       case two = "two"
+///       case three = "three"
+///     }
 ///
 /// Pass allCases as a parameter
+/// Usage:
 ///
-/// ```MenuBar(values: MenuItems.allCases)
-/// .onSelectionChanged{ item in }```
+///     MenuBar(values: MenuItems.allCases).onSelectionChanged{ item in }
 ///
-/// Observing menu selection changes via generic PreferenceKey in ```MenuBar+Ext.swift```
-/// Pass a clouser to ```onSelectionChanged```
+/// Observing menu selection changes via generic PreferenceKey in **MenuBar+Ext.swift**
+/// Pass a clouser to ``MenuBar/onSelectionChanged(_:)``
 /// if you need react on selection changed. In this case it does not trigger rerender as if in case you used passing selected item via binding
 ///
 @available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
