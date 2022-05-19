@@ -72,4 +72,6 @@ In this case it does not trigger rerender as if in case you used passing selecte
 
 Take a look on the example preview in [**MenuContentView.swift**](https://github.com/The-Igor/d3-menu-bar/blob/main/Sources/d3-menu-bar/example/MenuViewExample.swift) or create a project, add the package and put **MenuContentView()** in **ContentView()**
 
+## Used in
+[Auto scrollable header menu](https://github.com/The-Igor/d3-scrollable-menu-list)
 
