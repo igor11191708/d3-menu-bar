@@ -3,7 +3,7 @@
 ## Features
 - [x] Observing menu selection changes via generic PreferenceKey
 - [x] The color intensity automatically adjusts depending on color scheme (Color+Ext.swift) You don't need to set color for every scheme
-- [x] Various strategy for the item menu width allocation
+- [x] Various strategies for the item menu width allocation
 - [x] Set scroll position according the initial selection
 - [x] Setting custom colors for the component
 - [x] Customize menu item style [round or square]
