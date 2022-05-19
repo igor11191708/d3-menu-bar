@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  IStyleTpl.swift
 //  
 //
 //  Created by Igor Shelopaev on 17.05.2022.

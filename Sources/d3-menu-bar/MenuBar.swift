@@ -55,7 +55,7 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     // MARK: - Life circle
 
     /// - Parameters:
-    ///   - values: Menu items ```required```
+    ///   - values: Menu items
     ///   - selected: Selected item
     ///   - size: Size strategy
     ///   - color: Main color
@@ -137,9 +137,9 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     // MARK: - Inner enum, struct
 
     /// Size strategy
-    /// ```fit``` - Alocate all affodable space
-    /// ```auto``` - Auto size acoording content
-    /// ```flex``` - Set up minimal width
+    /// **fit** - Alocate all affodable space
+    /// **auto** - Auto size acoording content
+    /// **flex** - Set up minimal width
     public enum Strategy: Equatable {
         case auto
         case fit
