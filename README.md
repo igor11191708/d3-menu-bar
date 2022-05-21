@@ -28,7 +28,7 @@ enum MenuItems: String, IMenuItem {
 * `values` - Pass allCases as a parameter
 
 ```Swift 
-MenuBar(values: MenuItems.allCases)
+MenuBar(values: MenuItems.allCases, selected: $selected)
   .onSelectionChanged{ item in }
 ```
 
