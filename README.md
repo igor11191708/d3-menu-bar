@@ -24,7 +24,7 @@ enum MenuItems: String, IMenuItem {
 ```
 ### 2. create menu bar
 
-* `selected` - pass value bound to **@State var selected : MenuItems?** or pass .constant(.one)
+* `selected` - pass value bound to **@State var selected : MenuItems?**
 * `values` - Pass allCases as a parameter
 
 ```Swift 
