@@ -44,7 +44,6 @@ struct MenuViewExample: View, IEnvironment {
     @ViewBuilder
     private func buildMenu(
         values: [MenuItems],
-        selected: MenuItems? = nil,
         strategy: Strategy = .auto,
         color: Color? = nil,
         style: Style = .round)
@@ -56,15 +55,15 @@ struct MenuViewExample: View, IEnvironment {
     private var menus: some View {
         Group {
             Text("Min width 102").font(.callout)
-            buildMenu(values: items, selected: .one, strategy: .flex(102), color: .green)
+            buildMenu(values: items, strategy: .flex(102), color: .green)
             Text("Alocate all affodable space, not scrollable")
-            buildMenu(values: items, selected: .five, strategy: .fit, color: .blue)
+            buildMenu(values: items, strategy: .fit, color: .blue)
             Text("Auto size acoording content")
-            buildMenu(values: items, selected: .six, color: .red)
+            buildMenu(values: items, color: .red)
         }
         Group {
             Text("Auto size acoording content")
-            buildMenu(values: items, selected: .five, color: .purple, style: .square)
+            buildMenu(values: items, color: .purple, style: .square)
             Text("Auto size acoording content")
             buildMenu(values: items, color: .orange, style: .square)
             Text("Menu with min required params")

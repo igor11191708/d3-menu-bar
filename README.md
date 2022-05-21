@@ -23,18 +23,16 @@ enum MenuItems: String, IMenuItem {
 }
 ```
 ### 2. create menu bar
-Pass allCases as a parameter
+
+* `selected` - pass value bound to **@State var selected : MenuItems?** or pass .constant(.one)
+* `values` - Pass allCases as a parameter
+
 ```Swift 
 MenuBar(values: MenuItems.allCases)
   .onSelectionChanged{ item in }
 ```
 
-Pass a clouser to **onSelectionChanged** if you need react on selection changed.
-In this case it does not trigger rerender as if in case you used passing selected item via binding from **@StateObject**
-
 ## Optional
-
-* `selected` - pass value bound to **@State var selected : MenuItems?**
 
 * `strategy` - default strategy for the item menu width allocation is **auto**
 
