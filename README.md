@@ -10,6 +10,10 @@
 - [x] iOS and macOS support
 - [x] Dark and light scheme support
 
+## Documentation(API)
+- You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
+- Go to Product > Build Documentation or **⌃⇧⌘ D**
+
 ## Required
 
 ### 1. enum
