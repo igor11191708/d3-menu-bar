@@ -1,6 +1,6 @@
 //
 //  SquareTpl.swift
-//  
+//
 //
 //  Created by Igor Shelopaev on 17.05.2022.
 //
@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Square style for menu item
 struct SquareTpl: IStyleTpl {
-    
     /// sign of selection
     let isSelected: Bool
 
@@ -18,7 +17,7 @@ struct SquareTpl: IStyleTpl {
 
     /// Item color
     let color: Color
-    
+
     var body: some View {
         if isSelected {
             Rectangle()

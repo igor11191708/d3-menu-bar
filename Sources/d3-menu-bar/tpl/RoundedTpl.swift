@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Igor Shelopaev on 17.05.2022.
 //
@@ -9,7 +9,6 @@ import SwiftUI
 
 /// Rounded style for menu item
 struct RoundedTpl: IStyleTpl {
-    
     /// sign of selection
     let isSelected: Bool
 
@@ -18,7 +17,7 @@ struct RoundedTpl: IStyleTpl {
 
     /// Item color
     let color: Color
-    
+
     var body: some View {
         if isSelected {
             Capsule()

@@ -5,18 +5,17 @@
 //  Created by Igor Shelopaev on 15.05.2022.
 //
 
-import SwiftUI
 import d3_color
+import SwiftUI
 
 /// Template for menu item
-struct ItemTpl<T:IMenuItem, S : IStyleTpl>: View{
-
+struct ItemTpl<T: IMenuItem, S: IStyleTpl>: View {
     @Environment(\.colorScheme) var colorScheme
 
     // MARK: - Cfg
-    
-    let id : String
-    
+
+    let id: String
+
     /// Size strategy
     let strategy: MenuBar<T>.Strategy
 
@@ -31,8 +30,8 @@ struct ItemTpl<T:IMenuItem, S : IStyleTpl>: View{
 
     /// Item color
     let color: Color?
-    
-    let tpl : S.Type
+
+    let tpl: S.Type
 
     // MARK: - Life circle
 
@@ -53,21 +52,21 @@ struct ItemTpl<T:IMenuItem, S : IStyleTpl>: View{
     // MARK: - Private
 
     @ViewBuilder
-    /// Defines background for seleted and none selected item
+    /// Defines background for selected and none selected item
     private func bg(_ isSelected: Bool, _ ns: Namespace.ID, _ color: Color) -> some View {
         tpl.init(isSelected: isSelected, ns: ns, color: color)
     }
-    
+
     private var defaultColor: Color {
         colorScheme == .dark ? .white : .black
     }
 
     private var selectedFontColor: Color {
         let fontColor: Color = colorScheme == .dark ? .black : .white
-         return isSelected ? fontColor : mainColor
+        return isSelected ? fontColor : mainColor
     }
 
-    ///adjust the color intensity depending on color scheme (Color+Ext.swift) https://github.com/The-Igor/d3-color
+    /// adjust the color intensity depending on color scheme (Color+Ext.swift) https://github.com/The-Igor/d3-color
     private var mainColor: Color {
         if let c = color {
             return colorScheme == .dark ? c.doBrighter(k: 0.1) : c

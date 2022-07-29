@@ -7,22 +7,20 @@
 
 import SwiftUI
 
-
 /// Toggle control for example view
 @available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
 public struct DayNightToggle: View {
-    
     // MARK: - Cfg
-    
+
     /// true - light mode, false - dark mode
     @Binding var toggleScheme: Bool
-    
+
     // MARK: - Life circle
-    
-    public init(toggleScheme : Binding<Bool>){
+
+    public init(toggleScheme: Binding<Bool>) {
         _toggleScheme = toggleScheme
     }
-    
+
     public var body: some View {
         ZStack {
             if toggleScheme {
@@ -31,7 +29,7 @@ public struct DayNightToggle: View {
                 Image(systemName: "sun.max.fill").foregroundColor(.orange)
             }
         }.frame(height: 50)
-            .frame(maxWidth : .infinity)
+            .frame(maxWidth: .infinity)
             .font(.system(size: 50))
             .padding()
             .onTapGesture { withAnimation { toggleScheme.toggle() } }

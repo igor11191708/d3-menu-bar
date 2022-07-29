@@ -42,8 +42,8 @@ MenuBar(values: MenuItems.allCases, selected: $selected)
 
 | Size strategy | Description |
 | --- | --- |
-|**fit**| Alocate all affodable space **not scrollable**|
-|**auto**| Auto size acoording the content |
+|**fit**| Allocate all affordable space **not scrollable**|
+|**auto**| Auto size according the content |
 |**flex(CGFloat)**| Set up minimal width|
 
 * `color` - default value is **.black**

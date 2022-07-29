@@ -22,12 +22,11 @@ import SwiftUI
 ///     MenuBar(values: MenuItems.allCases).onSelectionChanged{ item in }
 ///
 /// Observing menu selection changes via generic PreferenceKey in **MenuBar+Ext.swift**
-/// Pass a clouser to ``MenuBar/onSelectionChanged(_:)``
-/// if you need react on selection changed. In this case it does not trigger rerender as if in case you used passing selected item via binding
+/// Pass a closure to ``MenuBar/onSelectionChanged(_:)``
+/// if you need react on selection changed. In this case it does not trigger re-render as if in case you used passing selected item via binding
 ///
 @available(iOS 15.0, macOS 12.0, watchOS 6.0, *)
 public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
-
     /// A dynamic property type that allows access to a namespace used for
     @Namespace private var animation
 
@@ -83,12 +82,11 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
                 }
             }
         }.preference(key: MenuItemKey<T>.self, value: onTap)
-
     }
 
     // MARK: - Private
 
-    /// Restore scroll position accroding the selection
+    /// Restore scroll position according the selection
     /// - Parameter proxy: scroll proxy
     private func restoreScrollPosition(_ proxy: ScrollViewProxy) {
         if let s = selected {
@@ -111,8 +109,8 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     }
 
     @ViewBuilder
-    /// Define view template for cirtain style
-    private func itemBuilder<S : IStyleTpl>(_ tab: T, _ tpl: S.Type) -> some View {
+    /// Define view template for certain style
+    private func itemBuilder<S: IStyleTpl>(_ tab: T, _ tpl: S.Type) -> some View {
         let isSelected = selected == tab
         let text = tab.rawValue
         let id = tab.id
@@ -127,9 +125,9 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
             ForEach(values, id: \.self) { tab in
                 itemTpl(tab)
                     .onTapGesture {
-                    onTap = tab
-                    withAnimation { selected = tab }
-                }
+                        onTap = tab
+                        withAnimation { selected = tab }
+                    }
             }
         }
     }
@@ -137,8 +135,8 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     // MARK: - Inner enum, struct
 
     /// Size strategy
-    /// **fit** - Alocate all affodable space
-    /// **auto** - Auto size acoording content
+    /// **fit** - Allocate all affordable space
+    /// **auto** - Auto size according content
     /// **flex** - Set up minimal width
     public enum Strategy: Equatable {
         case auto
@@ -151,26 +149,23 @@ public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
         case round
         case square
     }
-
 }
 
 // MARK: - Extension
 
 ///  Observing menu selection changes via generic PreferenceKey
 public extension MenuBar {
-
     @ViewBuilder
     /// Callback on selection changed just with items as an input param for a closure
-    /// The first initial selection is ommited
+    /// The first initial selection is omitted
     /// - Parameter fn: callback function
     /// - Returns: View
     func onSelectionChanged(_ fn: @escaping (T?) -> Void) -> some View {
-        self.onPreferenceChange(MenuItemKey<T>.self) { if $0 != nil { fn($0) } }
+        onPreferenceChange(MenuItemKey<T>.self) { if $0 != nil { fn($0) } }
     }
-
 }
 
-// MARK: - Prewiew
+// MARK: - Preview
 
 struct MenuBar_Previews: PreviewProvider {
     static var previews: some View {
@@ -180,8 +175,3 @@ struct MenuBar_Previews: PreviewProvider {
         }.padding(.horizontal)
     }
 }
-
-
-
-
-

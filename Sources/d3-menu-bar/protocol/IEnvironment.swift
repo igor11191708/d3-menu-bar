@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-protocol IEnvironment{
-
-
-}
+protocol IEnvironment {}
 
 extension IEnvironment {
-
     var is_iOS: Bool {
         #if os(iOS)
             true

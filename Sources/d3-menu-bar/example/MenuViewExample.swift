@@ -56,15 +56,15 @@ struct MenuViewExample: View, IEnvironment {
         Group {
             Text("Min width 102").font(.callout)
             buildMenu(values: items, strategy: .flex(102), color: .green)
-            Text("Alocate all affodable space, not scrollable")
+            Text("Allocate all affordable space, not scrollable")
             buildMenu(values: items, strategy: .fit, color: .blue)
-            Text("Auto size acoording content")
+            Text("Auto size according content")
             buildMenu(values: items, color: .red)
         }
         Group {
-            Text("Auto size acoording content")
+            Text("Auto size according content")
             buildMenu(values: items, color: .purple, style: .square)
-            Text("Auto size acoording content")
+            Text("Auto size according content")
             buildMenu(values: items, color: .orange, style: .square)
             Text("Menu with min required params")
             buildMenu(values: items)
