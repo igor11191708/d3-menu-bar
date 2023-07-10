@@ -1,4 +1,8 @@
-# Menu bar component (SwiftUI)
+# Menu bar component SwiftUI
+
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fd3-menu-bar%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/The-Igor/d3-menu-bar)
+
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fd3-menu-bar%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/The-Igor/d3-menu-bar)
 
 ## Features
 - [x] Observing menu selection changes via generic PreferenceKey
@@ -9,10 +13,6 @@
 - [x] Customize menu item style [round or square]
 - [x] iOS and macOS support
 - [x] Dark and light scheme support
-
-## Documentation(API)
-- You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
-- Go to Product > Build Documentation or **⌃⇧⌘ D**
 
 ## Required
 
@@ -77,3 +77,6 @@ Take a look on the example preview in [**MenuContentView.swift**](https://github
 ## Used in
 [Auto scrollable header menu - SwiftUI & Combine](https://github.com/The-Igor/d3-scrollable-menu-list)
 
+## Documentation(API)
+- You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
+- Go to Product > Build Documentation or **⌃⇧⌘ D**
