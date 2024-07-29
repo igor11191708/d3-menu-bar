@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "d3-menu-bar",
     platforms: [
-        .macOS("12"), .iOS("15"), .tvOS("15"), .watchOS("7"),
+        .macOS("12"), .iOS("15"), .tvOS("16"), .watchOS("7"),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
