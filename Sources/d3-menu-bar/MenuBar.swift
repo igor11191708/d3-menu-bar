@@ -25,7 +25,7 @@ import SwiftUI
 /// Pass a closure to ``MenuBar/onSelectionChanged(_:)``
 /// if you need react on selection changed. In this case it does not trigger re-render as if in case you used passing selected item via binding
 ///
-@available(iOS 15.0, macOS 12.0, tvOS 16.0, watchOS 7.0, *)
+@available(iOS 15.0, macOS 12.0, tvOS 16.0, watchOS 10.0, *)
 public struct MenuBar<T>: View, IEnvironment where T: IMenuItem {
     /// A dynamic property type that allows access to a namespace used for
     @Namespace private var animation
