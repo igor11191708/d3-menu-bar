@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "d3-color",
-        "repositoryURL": "https://github.com/The-Igor/d3-color.git",
+        "repositoryURL": "https://github.com/igor11191708/d3-color.git",
         "state": {
           "branch": null,
           "revision": "debe2658f12c08119e8f2c64f3f4a5c47fbe83db",
