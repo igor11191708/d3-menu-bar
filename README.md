@@ -73,7 +73,7 @@ MenuBar(values: MenuItems.allCases, selected: $selected)
 Take a look on the example preview in [**MenuContentView.swift**](https://github.com/swiftuiux/d3-menu-bar/blob/main/Sources/d3-menu-bar/example/MenuViewExample.swift) or create a project, add the package and put **MenuContentView()** in **ContentView()**
 
 ## Used in
-[Auto scrollable header menu - SwiftUI & Combine](https://github.com/swiftuiux/d3-scrollable-menu-list)
+[Auto scrollable header menu - SwiftUI & Combine](https://github.com/swiftuiux/food-scrollable-menu-list)
 
 ## Documentation(API)
 - You need to have Xcode 13 installed in order to have access to Documentation Compiler (DocC)
